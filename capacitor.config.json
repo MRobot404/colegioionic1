@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "colegioionic",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
