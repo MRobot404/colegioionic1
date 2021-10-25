@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable prefer-const */
 /* eslint-disable eqeqeq */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
@@ -9,18 +10,24 @@ import { catchError } from 'rxjs/operators';
 import {Observable, ObservedValueOf } from 'rxjs';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-tab4',
+  templateUrl: 'tab4.page.html',
+  styleUrls: ['tab4.page.scss']
 })
-export class Tab1Page {
-  alumno: any={};
+export class Tab4Page {
+
   alumnos: any=[];
+  alumno: any={};
   constructor(private http: HttpClient) {
     let temporal: string = localStorage.getItem('alumno');
     if(temporal){
       this.alumno = JSON.parse(temporal);
     }
+  }
+
+  logout(){
+    localStorage.removeItem("alumno");
+    location.reload();
   }
 
 }

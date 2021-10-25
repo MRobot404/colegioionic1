@@ -1,3 +1,23 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet *ngIf="!iniciarSesion"></ion-router-outlet>
+  <div *ngIf="iniciarSesion">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title size="large"> Login </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div class="centrar">
+    <ion-item>
+      <ion-label>Carne:</ion-label>
+      <ion-input [(ngModel)]="alumno.carne"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <ion-input [(ngModel)]="alumno.contrasena"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button color="primary" (click)="ingresar()" expand="block">Ingresar</ion-button>
+    <ion-label color="danger" *ngIf="usuarioInvalido">Usuario o password invalido</ion-label>
+  </div>
+  </div>
 </ion-app>

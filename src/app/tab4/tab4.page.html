@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Mi perfil
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Mi perfil</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div class="centrar">
+    
+      <ion-list>
+        <ion-item>
+        <ul>
+          <li><b> Id: </b>{{alumno.idalumno}}</li>
+          <li><b> Carne:</b> {{alumno.carne}}</li>
+          <li><b> Nombre: </b>{{alumno.nombre}}</li>
+          <li><b>Apellido: </b>{{alumno.apellido}}</li>
+          <li><b> Contraseña:</b>{{alumno.contrasena}}</li>
+          <ion-button color="warning" shape="round">Cambiar contraseña</ion-button>
+        </ul>
+      </ion-item>
+      </ion-list>
+
+    <ion-button expand="block"  color="danger" shape="round" (click)="logout()">Cerrar sesión</ion-button>
+  </div>
+  </ion-content>
+  
