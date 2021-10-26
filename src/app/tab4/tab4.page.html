@@ -21,11 +21,12 @@
           <li><b> Carne:</b> {{alumno.carne}}</li>
           <li><b> Nombre: </b>{{alumno.nombre}}</li>
           <li><b>Apellido: </b>{{alumno.apellido}}</li>
-          <li><b> Contraseña:</b>{{alumno.contrasena}}</li>
-          <ion-button color="warning" shape="round">Cambiar contraseña</ion-button>
-        </ul>
+          <li><b>Contraseña: </b>{{alumno.contrasena}}</li>
+          <ion-button color="warning" shape="round" (click)="cambiarcontrasena()">Cambiar contraseña</ion-button>
+        </ul>   
       </ion-item>
       </ion-list>
+    
 
     <ion-button expand="block"  color="danger" shape="round" (click)="logout()">Cerrar sesión</ion-button>
   </div>

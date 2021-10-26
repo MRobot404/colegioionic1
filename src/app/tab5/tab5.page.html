@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Cambiar contraseña
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Mi perfil</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div class="centrar">
+      <ion-list>
+        <ion-item>
+        <ul>
+          <ion-label><b>Id del alumno:</b></ion-label>
+          <ion-input [ngModel]="alumno.idalumno" disabled></ion-input>
+          <ion-label><b>Carne:</b></ion-label>
+          <ion-input [ngModel]="alumno.carne" disabled></ion-input>
+          <ion-label><b>Nombre:</b></ion-label>
+          <ion-input [ngModel]="alumno.nombre" disabled></ion-input>
+          <ion-label><b>Apellido:</b></ion-label>
+          <ion-input [ngModel]="alumno.apellido" disabled></ion-input>
+          <ion-label><b>Contraseña:</b></ion-label>
+          <ion-input [ngModel]="alumno.contrasena" clearInput></ion-input>
+        </ul>   
+      </ion-item>
+      </ion-list>
+      <ion-button color="warning" shape="round" (click)="crear()">Cambiar contraseña</ion-button>
+  </div>
+  </ion-content>
+  

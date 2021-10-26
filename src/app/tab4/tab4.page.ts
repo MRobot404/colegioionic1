@@ -19,6 +19,7 @@ export class Tab4Page {
   alumnos: any=[];
   alumno: any={};
   constructor(private http: HttpClient) {
+
     let temporal: string = localStorage.getItem('alumno');
     if(temporal){
       this.alumno = JSON.parse(temporal);
@@ -28,6 +29,10 @@ export class Tab4Page {
   logout(){
     localStorage.removeItem("alumno");
     location.reload();
+  }
+
+  cambiarcontrasena(){
+    location.href="/tabs/tab5";
   }
 
 }
