@@ -9,37 +9,37 @@ import { catchError } from 'rxjs/operators';
 import {Observable, ObservedValueOf } from 'rxjs';
 
 @Component({
-  selector: 'app-tab5',
-  templateUrl: 'tab5.page.html',
-  styleUrls: ['tab5.page.scss']
+  selector: 'app-tab6',
+  templateUrl: 'tab6.page.html',
+  styleUrls: ['tab6.page.scss']
 })
-export class Tab5Page {
-  alumno: any={};
-  alumnos: any=[];
-  crearUsuario: boolean=true;
+export class Tab6Page {
+
+  nota:any={};
   constructor(private http: HttpClient) {
     let temporal: string = localStorage.getItem('alumno');
     if(temporal){
-      this.alumno = JSON.parse(temporal);
+      this.nota.alumnoIdalumno = JSON.parse(temporal);
+      this.nota.alumnoIdalumno = this.nota.alumnoIdalumno.idalumno;
+      console.log(this.nota.alumnoIdalumno)
     }
+    let id=localStorage.getItem("id");
+    this.nota.cursoIdcurso=JSON.parse(id);
+    let nombre=localStorage.getItem("nombrecurso");
+    this.nota.nombreCurso=nombre;
+    console.log(nombre);
   }
 
   crear(){
-   if(this.alumno.idalumno&&this.alumno.carne&&this.alumno.nombre&&this.alumno.apellido&&this.alumno.contrasena){
-    this.servicioGuardar().subscribe(
-      (response: any) => this.confirmar(response)
-    );
-   }else{
-     console.log("Error");
-   }
-   console.log(this.alumno)
+      this.servicioGuardar().subscribe(
+        (response: any) => this.confirmar(response)
+      );
+   
+   
   }
 
-
   confirmar(res: any){
-      alert('Contraseña actualizada exitosamente '+res.idalumno);
-      localStorage.setItem('alumno',JSON.stringify(res));
-      location.href='/tabs/tab4';
+      alert('Asignación creada exitosamente'+res.idnota);
   }
 
   servicioGuardar() {
@@ -50,10 +50,9 @@ export class Tab5Page {
     };
     return this.http
       .post<any>(
-        'http://localhost:3030/alumno/guardar',
-        this.alumno,httpOptions
+        'http://localhost:3030/nota/guardar',
+        this.nota,httpOptions
       )
       .pipe(catchError((e) => 'error'));
   }
-
 }

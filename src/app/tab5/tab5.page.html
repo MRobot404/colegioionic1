@@ -12,24 +12,30 @@
         <ion-title size="large">Mi perfil</ion-title>
       </ion-toolbar>
     </ion-header>
+    <div id="container" *ngIf="crearUsuario">
     <div class="centrar">
-      <ion-list>
         <ion-item>
-        <ul>
           <ion-label><b>Id del alumno:</b></ion-label>
-          <ion-input [ngModel]="alumno.idalumno" disabled></ion-input>
+          <ion-input [(ngModel)]="alumno.idalumno" disabled></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label><b>Carne:</b></ion-label>
-          <ion-input [ngModel]="alumno.carne" disabled></ion-input>
+          <ion-input [(ngModel)]="alumno.carne" disabled></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label><b>Nombre:</b></ion-label>
-          <ion-input [ngModel]="alumno.nombre" disabled></ion-input>
+          <ion-input [(ngModel)]="alumno.nombre" disabled></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label><b>Apellido:</b></ion-label>
-          <ion-input [ngModel]="alumno.apellido" disabled></ion-input>
+          <ion-input [(ngModel)]="alumno.apellido" disabled></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label><b>Contraseña:</b></ion-label>
-          <ion-input [ngModel]="alumno.contrasena" clearInput></ion-input>
-        </ul>   
-      </ion-item>
-      </ion-list>
+          <ion-input [(ngModel)]="alumno.contrasena" clearInput></ion-input> 
+        </ion-item>
       <ion-button color="warning" shape="round" (click)="crear()">Cambiar contraseña</ion-button>
   </div>
+</div>
   </ion-content>
   

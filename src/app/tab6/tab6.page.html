@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+       Asignarse
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Mis cursos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div class="centrar">
+        <ion-item>
+          <ion-input [(ngModel)]="nota.cursoIdcurso" disabled clearInput></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="nota.alumnoIdalumno" disabled clearInput></ion-input>
+        </ion-item>
+      <ion-item>
+        <ion-label>Nombre del curso:</ion-label>
+          <ion-input [(ngModel)]="nota.nombreCurso" disabled clearInput></ion-input>
+        </ion-item>
+          <ion-button color="warning" shape="round"  (click)="crear()">Asignarse</ion-button>
+     
+    
+  
+  </div>
+  </ion-content>

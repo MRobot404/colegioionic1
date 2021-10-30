@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Asignarse
+     Asignarse
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,29 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Mis cursos</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="centrar">
+  
+    <ion-list>
+      <ion-item *ngFor="let curso of cursos">
+      <ul>
+        <li id="idcurso">{{curso.idcurso}}</li>
+        <li>Nombre: {{ curso.nombre }}</li>
+        <li>Fecha de inicio: {{ curso.fechaDeInicio | date: 'dd/MM/yyyy' }}</li>
+        <li>Fecha de finalización: {{ curso.fechaFin  | date: 'dd/MM/yyyy'}}</li>
+        <li>Día: {{ curso.dia }}</li>
+        <li>Hora de inicio: {{ curso.horaInicio }}</li>
+        <li>Hora de finalización: {{ curso.horaFin }}</li>
+        <ion-button color="warning" shape="round" (click)="asignarse(curso)">Asignarse</ion-button>
+      </ul>   
+      
+    </ion-item>
+    
+    </ion-list>
+  
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+</div>
 </ion-content>
+
